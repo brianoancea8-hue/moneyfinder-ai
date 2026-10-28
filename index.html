@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MoneyFinder AI</title>
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #0b1020;
+  color: white;
+  text-align: center;
+}
+header {
+  padding: 25px 15px;
+  background: #111a30;
+}
+h1 { color: #42e8a0; }
+main {
+  max-width: 600px;
+  margin: 25px auto;
+  padding: 15px;
+}
+.card {
+  background: #17233b;
+  margin: 15px 0;
+  padding: 22px;
+  border-radius: 15px;
+}
+button {
+  background: #42e8a0;
+  color: #07111c;
+  border: 0;
+  padding: 13px 20px;
+  border-radius: 9px;
+  font-weight: bold;
+  font-size: 16px;
+}
+input {
+  width: 85%;
+  padding: 13px;
+  border-radius: 8px;
+  border: 0;
+  margin: 10px;
+}
+footer {
+  color: #aab4c8;
+  padding: 25px;
+  font-size: 12px;
+}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>💰 MoneyFinder AI</h1>
+  <p>Scopri nuove opportunità per guadagnare online</p>
+</header>
+
+<main>
+  <div class="card">
+    <h2>🔎 Trova la tua opportunità</h2>
+    <p>Scrivi cosa sai fare e scopri da dove iniziare.</p>
+    <input id="skills" placeholder="Es. informatica, vendita, scrittura">
+    <br>
+    <button onclick="findIdeas()">Trova idee</button>
+    <div id="results"></div>
+  </div>
+
+  <div class="card">
+    <h2>💻 Lavori online</h2>
+    <p>Valuta freelance, assistenza clienti e servizi digitali.</p>
+    <button onclick="showJobs()">Scopri le possibilità</button>
+    <div id="jobs"></div>
+  </div>
+
+  <div class="card">
+    <h2>🚀 Idee per un'attività</h2>
+    <p>Esplora modi per creare un progetto digitale.</p>
+    <button onclick="showBusiness()">Mostra idee</button>
+    <div id="business"></div>
+  </div>
+</main>
+
+<footer>
+  MoneyFinder AI — Le idee non garantiscono guadagni.
+  Fai attenzione alle offerte che chiedono denaro in anticipo.
+</footer>
+
+<script>
+function findIdeas() {
+  const skills = document.getElementById('skills').value.trim();
+  const result = document.getElementById('results');
+  if (!skills) {
+    result.innerHTML = '<p>Scrivi prima le tue competenze.</p>';
+    return;
+  }
+  result.innerHTML = '<h3>Possibili strade per te</h3><p>In base a: ' +
+    skills.replace(/[&<>"']/g, '') +
+    '</p><p>1. Offri un servizio freelance.<br>' +
+    '2. Crea contenuti digitali.<br>' +
+    '3. Cerca lavori da remoto.<br>' +
+    '4. Realizza un piccolo servizio online.</p>';
+}
+function showJobs() {
+  document.getElementById('jobs').innerHTML =
+    '<p>Es
